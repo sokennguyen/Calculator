@@ -1,0 +1,32 @@
+body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.Calculator{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Numpad {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 5px;
+}
+
+.UserScreen {
+    height: 50px;
+    width: 300px;
+    border-color: black;
+    border: solid;
+}
+
+
+.num {
+    border-color: black;
+    border: solid;
+}
