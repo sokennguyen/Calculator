@@ -12,6 +12,12 @@ body{
     gap: 10px;
 }
 
+.Keys{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .Numpad {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -27,6 +33,28 @@ body{
 
 
 .num {
+    width: 20px;
     border-color: black;
     border: solid;
+    text-align: center;
+    justify-content: center;
+}
+
+.FuncContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 5px; 
+}
+
+.Function, .ResultButton {
+    width: 20px;
+    border: solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.Result{
+    width: 50px;
 }

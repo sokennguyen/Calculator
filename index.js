@@ -1,4 +1,5 @@
 window.onload=function(){
+
 function add(num1,num2) {
     return num1+num2;
 }
@@ -35,13 +36,45 @@ function createNumPad(){
 }
 createNumPad();
 
+
+
+
 const numbers=document.querySelectorAll(".num");
+const NumberTab=document.querySelector(".NumberTab");
+const funcs=document.querySelectorAll(".Function");
+const ResultButton=document.querySelector(".ResultButton");
+const Result=document.querySelector(".Result");
+let currentNum=NumberTab.textContent;
+let currentFunc;
+let prevNum;
+
+
+//add numbers clicked to user screen and store the numbers
 numbers.forEach((number) => {
     number.addEventListener("click", (e)=>{
-        document.querySelector(".UserScreen").textContent+=number.textContent;
-        console.log(number.textContent)
+        NumberTab.textContent+=number.textContent;
+        currentNum+=number.textContent;
     })
 });
+
+
+funcs.forEach((func) => {
+    func.addEventListener("click", (e)=>{
+        currentFunc=func.textContent;
+        prevNum=currentNum;
+        currentNum="";
+        console.log(currentFunc)
+    })
+});
+
+ResultButton.addEventListener("click", ()=>{
+    console.log({prevNum})
+    console.log({currentNum})    
+    Result.textContent=operate(parseInt(prevNum),parseInt(currentNum),currentFunc);
+})
+
+
+
 
 
 }
